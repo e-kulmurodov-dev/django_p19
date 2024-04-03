@@ -9,7 +9,7 @@ from apps.models import ContactModel
 class CategoryResource(resources.ModelResource):
     class Meta:
         model = ContactModel
-        fields = ("id", "name")
+        fields = ("id", "name", 'email', 'phone', 'image')
 
 
 @admin.register(ContactModel)
