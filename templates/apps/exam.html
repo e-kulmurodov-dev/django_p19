@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <caption>
+        <h2>Contacts</h2>
+    </caption>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    <tbody>
+    {% for contact in contacts %}
+    <tr>
+        <td>{{ contact.id }} </td>
+        <td><a href="{% url 'exam_detail_page' contact.id %}">{{ contact.name }}</a></td>
+        <td>{{ contact.email }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
+
